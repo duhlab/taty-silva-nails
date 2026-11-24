@@ -191,7 +191,7 @@ input:focus,select:focus{outline:2px solid var(--rose);outline-offset:1px}
 
 /* sobre */
 .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,80px);align-items:center}
-.ph-a{position:relative;max-width:400px}
+.ph-a{position:relative;max-width:360px}
 .ph-a img{border-radius:200px 200px 24px 24px;width:100%;height:auto;box-shadow:var(--shadow)}
 .ph-a::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--rose);border-radius:200px 200px 24px 24px;z-index:-1}
 .tl{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:16px;border-left:1px solid var(--rose-l);padding-left:22px}
@@ -201,6 +201,31 @@ input:focus,select:focus{outline:2px solid var(--rose);outline-offset:1px}
 .tl span{color:var(--ink-2)}
 .quote{margin-top:28px;font:italic 500 1.5rem/1.3 var(--serif);color:var(--rose-dd)}
 @media(max-width:860px){.about .wrap{grid-template-columns:1fr}.ph-a{margin-inline:auto;width:min(340px,86vw)}}
+
+
+/* café */
+.cafe{background:linear-gradient(180deg,var(--blush) 0,var(--blush-2) 100%);position:relative;overflow:hidden}
+.cafe::before{content:"";position:absolute;width:620px;height:620px;right:-180px;top:-160px;border-radius:50%;background:radial-gradient(circle,rgba(217,169,166,.35),transparent 65%)}
+.cafe .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,6vw,84px);align-items:center;position:relative}
+.cup{position:relative;justify-self:center;width:min(420px,100%);padding-top:70px}
+.cup .fr{position:relative;border-radius:999px 999px 26px 26px;padding:10px;background:var(--white);box-shadow:var(--shadow)}
+.cup .fr::before{content:"";position:absolute;inset:-9px;border-radius:999px 999px 34px 34px;border:1px solid var(--rose);opacity:.7}
+.cup img{width:100%;height:auto;border-radius:999px 999px 18px 18px}
+.steam{position:absolute;left:50%;top:0;width:150px;height:110px;transform:translateX(-50%);overflow:visible}
+.steam path{fill:none;stroke:url(#rg);stroke-width:2;stroke-linecap:round;opacity:0}
+@media (prefers-reduced-motion:no-preference){.steam path{stroke-dasharray:140;animation:steam 4.2s ease-in-out infinite}.steam path:nth-child(2){animation-delay:1.4s}.steam path:nth-child(3){animation-delay:2.8s}
+@keyframes steam{0%{stroke-dashoffset:140;opacity:0;transform:translateY(16px)}35%{opacity:.85}100%{stroke-dashoffset:-140;opacity:0;transform:translateY(-14px)}}}
+@media (prefers-reduced-motion:reduce){.steam path{opacity:.6}}
+.tagc{position:absolute;left:-26px;bottom:40px;background:var(--white);border-radius:18px;box-shadow:var(--shadow);padding:12px 16px;display:flex;gap:10px;align-items:center;font-size:.88rem;color:var(--ink-2);max-width:220px}
+.tagc svg{width:28px;height:28px;color:var(--rose-d);flex:none}
+.tagc b{display:block;font:600 1.1rem/1.1 var(--serif);color:var(--ink)}
+@media (prefers-reduced-motion:no-preference){.tagc{animation:bob 6.5s ease-in-out infinite}}
+.cq{display:grid;gap:14px;margin-top:28px}
+.cq blockquote{margin:0;background:var(--white);border-radius:20px;padding:18px 20px 16px;box-shadow:0 1px 0 var(--line);position:relative}
+.cq blockquote::before{content:"\201C";position:absolute;top:-4px;right:16px;font:500 4rem/1 var(--serif);color:var(--rose-l)}
+.cq p{margin:0 0 8px;font:italic 500 1.2rem/1.35 var(--serif);color:var(--ink);padding-right:28px}
+.cq footer{font-size:.85rem;color:var(--ink-2)}.cq .st{color:#C9A227;letter-spacing:2px;margin-right:6px}
+@media(max-width:860px){.cafe .wrap{grid-template-columns:1fr}.cup{width:min(330px,84vw)}.tagc{left:-14px;bottom:24px}}
 
 /* avaliações */
 .rev{background:var(--white);overflow:hidden}
@@ -254,6 +279,7 @@ input:focus,select:focus{outline:2px solid var(--rose);outline-offset:1px}
 .map span{position:absolute;left:12px;bottom:12px;background:var(--white);padding:6px 12px;border-radius:999px;font-size:.82rem;box-shadow:var(--shadow)}
 .addr b{font:600 1.2rem var(--serif);display:block}
 .addr{color:var(--ink-2);font-size:.95rem}
+.appt{margin:0 0 12px;padding:14px 16px;border-radius:16px;background:var(--blush);font-size:.92rem;color:var(--ink-2)}.appt b{display:block;font:600 1.15rem var(--serif);color:var(--ink);margin-bottom:2px}
 .hrs{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:6px}
 .hrs td{padding:8px 10px;border-bottom:1px solid var(--blush-2)}
 .hrs td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -311,7 +337,7 @@ img.fade{opacity:0;transition:opacity .6s ease}img.fade.ok{opacity:1}
 <header class="top" id="top">
   <div class="wrap">
     <a class="logo" href="#inicio" aria-label="Taty Silva Studio, início"><svg><use href="#dia"/></svg><b>TATY SILVA</b><i>Studio</i></a>
-    <nav class="nav" aria-label="Seções"><a href="#servicos">Serviços</a><a href="#trabalhos">Trabalhos</a><a href="#provador">Provador</a><a href="#sobre">A Taty</a><a href="#avaliacoes">Avaliações</a><a href="#agendar">Agendar</a></nav>
+    <nav class="nav" aria-label="Seções"><a href="#servicos">Serviços</a><a href="#trabalhos">Trabalhos</a><a href="#provador">Provador</a><a href="#sobre">A Taty</a><a href="#cafe">O café</a><a href="#avaliacoes">Avaliações</a><a href="#agendar">Agendar</a></nav>
     <a class="btn btn-p" href="#agendar"><svg><use href="#wa"/></svg><span>Agendar</span></a>
   </div>
 </header>
@@ -321,10 +347,10 @@ img.fade{opacity:0;transition:opacity .6s ease}img.fade.ok{opacity:1}
   <canvas id="spark" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
-      <div class="live" id="live"><span class="dot"></span><span id="liveTxt">Ter. a sáb. · 9h às 16h</span></div>
+      <div class="live off"><span class="dot"></span><span>Terça a sábado · com hora marcada</span></div>
       <span class="kick">Amor em cada detalhe</span>
       <h1>Unhas com a <em>naturalidade</em> que já existe em você</h1>
-      <p class="lead">Nail designer no Bom Retiro, especialista em blindagem Fiber, alongamento natural e esmaltação em gel. Um atendimento com hora marcada, café quentinho e resultado que dura.</p>
+      <p class="lead">Nail designer no Bom Retiro. A esmaltação em gel é a especialidade da casa, e a blindagem Fiber deixa a sua unha natural mais forte. Atendimento com hora marcada, café quentinho e resultado que dura.</p>
       <div class="ctas">
         <a class="btn btn-p" href="#agendar"><svg><use href="#wa"/></svg>Agendar meu horário</a>
         <a class="btn btn-g" href="#trabalhos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.4 5.6L20 9.3l-4.3 3.9L17 19l-5-3-5 3 1.3-5.8L4 9.3l5.6-.7z"/></svg>Ver trabalhos</a>
@@ -348,9 +374,9 @@ img.fade{opacity:0;transition:opacity .6s ease}img.fade.ok{opacity:1}
   <div class="wrap">
     <div class="head rv"><span class="kick">O que eu faço</span><h2>Serviços pensados para a sua unha natural</h2><p class="lead">Técnica, produto de qualidade e um olhar atento para valorizar a beleza única de cada cliente.</p></div>
     <div class="svc">
-      <article class="sv rv"><img class="fade" src="img/serv-gel.webp" width="800" height="1067" alt="Esmaltação em gel vermelha" loading="lazy" decoding="async"><div class="t"><span class="tag">Brilho que dura</span><h3>Esmaltação em gel</h3><p>Brilho intenso e alta durabilidade. Você sai do studio com as unhas sequinhas, prontas para qualquer lugar.</p><button type="button" data-svc="Esmaltação em gel">Quero este <svg><use href="#arr"/></svg></button></div></article>
-      <article class="sv rv"><img class="fade" src="img/serv-alongamento.webp" width="800" height="856" alt="Alongamento natural com francesinha" loading="lazy" decoding="async"><div class="t"><span class="tag">Fibra</span><h3>Alongamento natural</h3><p>Comprimento com leveza, formato que valoriza a mão e acabamento tão natural que parece sua.</p><button type="button" data-svc="Alongamento natural">Quero este <svg><use href="#arr"/></svg></button></div></article>
-      <article class="sv rv"><img class="fade" src="img/serv-blindagem.webp" width="800" height="856" alt="Unhas naturais com blindagem" loading="lazy" decoding="async"><div class="t"><span class="tag">Especialidade</span><h3>Blindagem Fiber</h3><p>Resistência para a unha natural crescer forte, sem perder a delicadeza. Ideal para quem quer unha própria bonita.</p><button type="button" data-svc="Blindagem Fiber">Quero este <svg><use href="#arr"/></svg></button></div></article>
+      <article class="sv rv"><img class="fade" src="img/serv-gel.webp" width="800" height="1067" alt="Esmaltação em gel lilás" loading="lazy" decoding="async"><div class="t"><span class="tag">Especialidade da casa</span><h3>Esmaltação em gel</h3><p>O carro-chefe do studio: brilho intenso, acabamento caprichado e alta durabilidade. Você sai com as unhas sequinhas, prontas para qualquer lugar.</p><button type="button" data-svc="Esmaltação em gel">Quero este <svg><use href="#arr"/></svg></button></div></article>
+      <article class="sv rv"><img class="fade" src="img/serv-alongamento.webp" width="800" height="1422" alt="Alongamento feito com o molde F1" loading="lazy" decoding="async"><div class="t"><span class="tag">Molde F1</span><h3>Alongamento natural</h3><p>Feito com o método do molde F1: comprimento com leveza, formato que valoriza a mão e acabamento tão natural que parece sua.</p><button type="button" data-svc="Alongamento natural">Quero este <svg><use href="#arr"/></svg></button></div></article>
+      <article class="sv rv"><img class="fade" src="img/serv-blindagem.webp" width="800" height="1067" alt="Unhas curtas com blindagem Fiber e esmalte fosco" loading="lazy" decoding="async"><div class="t"><span class="tag">Unha natural mais forte</span><h3>Blindagem Fiber</h3><p>Blindagem com fibra que não alonga: você mantém a sua unha natural, só que bem mais resistente. Para quem ama unha curta e bonitinha, mas sofre com unha que descama, quebra ou começa a crescer e quebra de novo.</p><button type="button" data-svc="Blindagem Fiber">Quero este <svg><use href="#arr"/></svg></button></div></article>
       <article class="sv rv"><img class="fade" src="img/serv-manutencao.webp" width="800" height="870" alt="Manutenção com esmalte rosa chá" loading="lazy" decoding="async"><div class="t"><span class="tag">Cuidado contínuo</span><h3>Manutenção</h3><p>Para manter tudo impecável entre uma visita e outra, com cappuccino servido em toda manutenção.</p><button type="button" data-svc="Manutenção">Quero este <svg><use href="#arr"/></svg></button></div></article>
     </div>
   </div>
@@ -398,7 +424,7 @@ img.fade{opacity:0;transition:opacity .6s ease}img.fade.ok{opacity:1}
       <div class="res" aria-live="polite">
         <small>Sua próxima visita</small>
         <div class="big" id="nx">—</div>
-        <p class="note">O prazo ideal para a sua unha a Taty confirma no atendimento. Domingo e segunda o studio fecha, então a data já cai num dia de atendimento.</p>
+        <p class="note">O prazo ideal para a sua unha a Taty confirma no atendimento. O atendimento é de terça a sábado, então a data já cai num dia de atendimento.</p>
         <div class="row"><a class="btn btn-p" id="gcal" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Salvar no Google Agenda</a><a class="btn btn-g" id="wnx" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Já reservar essa data</a></div>
       </div>
     </div>
@@ -407,17 +433,36 @@ img.fade{opacity:0;transition:opacity .6s ease}img.fade.ok{opacity:1}
 
 <section class="about" id="sobre">
   <div class="wrap">
-    <div class="ph-a rv"><img class="fade" src="img/taty-studio.webp" width="720" height="1280" alt="Taty Silva no studio de paredes rosé" loading="lazy" decoding="async"></div>
+    <div class="ph-a rv"><img class="fade" src="img/taty-jaleco.webp" width="798" height="1574" alt="Taty Silva de jaleco preto com o logo do studio" loading="lazy" decoding="async"></div>
     <div class="rv">
-      <span class="kick">Prazer, Taty</span>
+      <span class="kick">Prazer, sou a Taty</span>
       <h2>Não trabalho só com unhas, trabalho com propósito</h2>
       <p class="lead">Meu propósito é ativar a beleza que já existe em você. Cada detalhe carrega conhecimento, técnica e amor pelo que faço, e aqui você conhece o processo e os produtos que uso.</p>
       <ul class="tl">
         <li><b>1996</b><span>começo da minha história como manicure.</span></li>
         <li><b>2021</b><span>voltei ao mundo das unhas com um novo olhar e um novo propósito.</span></li>
-        <li><b>Hoje</b><span>nail designer, especialista em blindagem Fiber e em naturalidade.</span></li>
+        <li><b>Hoje</b><span>nail designer, com a esmaltação em gel como especialidade e especialista em blindagem Fiber.</span></li>
       </ul>
       <p class="quote">“Mais que técnica, é sobre você.”</p>
+    </div>
+  </div>
+</section>
+
+<section class="cafe" id="cafe">
+  <div class="wrap">
+    <div class="cup rv">
+      <svg class="steam" viewBox="0 0 150 110" aria-hidden="true"><path d="M50 105c-14-18 14-30 0-50s12-32 4-52"/><path d="M75 108c-14-18 14-30 0-50s12-32 4-54"/><path d="M100 105c-14-18 14-30 0-50s12-32 4-52"/></svg>
+      <div class="fr"><img class="fade" src="img/cafe.webp" width="1000" height="1333" alt="Cappuccino com chocolate servido no Taty Silva Studio" loading="lazy" decoding="async"></div>
+      <div class="tagc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 1.2 1 1.2 1 2.4M12 3c0 1.2 1 1.2 1 2.4"/></svg><span><b>Cappuccino</b>em toda manutenção</span></div>
+    </div>
+    <div class="rv">
+      <span class="kick">Mimo da casa</span>
+      <h2>Um café feito com carinho esperando por você</h2>
+      <p class="lead">Aqui o cuidado começa antes da primeira lixa. Você é recebida com um cappuccino caprichado e alguns mimos, para relaxar enquanto a Taty cuida das suas unhas. As clientes amam tanto que ele aparece nas avaliações.</p>
+      <div class="cq">
+        <blockquote><p>O espaço é um verdadeiro castelo de princesa, sem contar o cappuccino maravilhoso que servem em toda manutenção!</p><footer><span class="st">★★★★★</span>Juliana F. · Google</footer></blockquote>
+        <blockquote><p>Ela tem uma recepção maravilhosa, aquele café top, o bom dia, o carinho contagiante.</p><footer><span class="st">★★★★★</span>Cacia C. · Google</footer></blockquote>
+      </div>
     </div>
   </div>
 </section>
@@ -435,9 +480,9 @@ img.fade{opacity:0;transition:opacity .6s ease}img.fade.ok{opacity:1}
     <div class="head rv"><span class="kick">Por que a Taty</span><h2>Mais que técnica, é sobre você</h2><p class="lead">O que faz as clientes voltarem, e trazerem as amigas.</p></div>
     <div class="dgrid">
       <div class="ditems">
-        <div class="di rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l7 3v5.5c0 4.4-3 8.2-7 9.5-4-1.3-7-5.1-7-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg><div><h3>Blindagem Fiber</h3><p>Especialidade da casa: unha natural mais resistente, com brilho e durabilidade.</p></div></div>
+        <div class="di rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l2.4 5.6L20 9.3l-4.3 3.9L17 19l-5-3-5 3 1.3-5.8L4 9.3l5.6-.7z"/></svg><div><h3>Esmaltação em gel</h3><p>A especialidade da casa: brilho, acabamento caprichado e durabilidade de verdade.</p></div></div>
         <div class="di rv"><svg viewBox="0 0 40 34"><use href="#dia"/></svg><div><h3>Naturalidade é a assinatura</h3><p>Formato, cor e comprimento escolhidos para parecer seu, delicado e elegante.</p></div></div>
-        <div class="di rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 9h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 1.2 1 1.2 1 2.4M12 3c0 1.2 1 1.2 1 2.4"/></svg><div><h3>Café com a Taty</h3><p>Espaço acolhedor, limpeza impecável e cappuccino em toda manutenção.</p></div></div>
+        <div class="di rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l7 3v5.5c0 4.4-3 8.2-7 9.5-4-1.3-7-5.1-7-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg><div><h3>Blindagem Fiber</h3><p>Especialista em deixar a unha natural curtinha mais forte, sem alongar.</p></div></div>
         <div class="di rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/></svg><div><h3>Processo transparente</h3><p>Você conhece cada etapa e os produtos usados na sua unha.</p></div></div>
       </div>
       <figure class="fair rv" style="margin:0"><img class="fade" src="img/beauty-fair.webp" width="720" height="1280" alt="Taty no estande da Dafu Nails na Beauty Fair" loading="lazy" decoding="async"><figcaption><b>Beauty Fair 2026 com a Dafu Nails</b>Presente na maior feira de beleza do país, ao lado da marca parceira.</figcaption></figure>
@@ -465,7 +510,7 @@ img.fade{opacity:0;transition:opacity .6s ease}img.fade.ok{opacity:1}
         <p class="addr"><b>Taty Silva Studio</b>Rua Prates, 661 · Bom Retiro, São Paulo · CEP 01121-000</p>
       </div>
       <div class="box rv">
-        <div class="live" id="live2" style="margin-bottom:10px"><span class="dot"></span><span id="liveTxt2"></span></div>
+        <p class="appt"><b>Atendimento só com hora marcada</b>A Taty vai ao studio para o seu horário, então combine antes pelo WhatsApp.</p>
         <table class="hrs" id="hrs" aria-label="Horário de funcionamento"></table>
         <div class="go">
           <a class="btn btn-wz" href="https://waze.com/ul?ll=-23.528183,-46.6356303&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C7 3 3.5 6.6 3.5 10.8c0 1.7-.6 2.9-1.5 3.6.9 1.4 2.4 2.4 4.2 2.8a2 2 0 0 0 3.8.8h3.4a2 2 0 0 0 3.8-.7c2.7-.9 4.8-3.6 4.8-6.6C22 6.4 17.6 3 12 3Zm-2.8 7.4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm5.6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm-6 2.4h1.2a2.2 2.2 0 0 0 4 0h1.2a3.4 3.4 0 0 1-6.4 0Z"/></svg>Ir com Waze</a>
@@ -485,7 +530,7 @@ img.fade{opacity:0;transition:opacity .6s ease}img.fade.ok{opacity:1}
   <div class="wrap">
     <div><a class="logo" href="#inicio"><svg><use href="#dia"/></svg><b>TATY SILVA</b><i>Studio</i></a><p>Amor em cada detalhe. Nail designer no Bom Retiro, São Paulo.</p></div>
     <nav aria-label="Rodapé"><a href="#servicos">Serviços</a><a href="#provador">Provador</a><a href="#lembrete">Lembrete de manutenção</a><a href="#agendar">Agendar</a></nav>
-    <nav aria-label="Contato"><a href="https://wa.me/5511980158667" target="_blank" rel="noopener">WhatsApp (11) 98015-8667</a><a href="https://www.instagram.com/tatysilvastudio/" target="_blank" rel="noopener">@tatysilvastudio</a><a href="https://waze.com/ul?ll=-23.528183,-46.6356303&navigate=yes" target="_blank" rel="noopener">Ir com Waze</a><span>Ter. a sáb. · 9h às 16h</span></nav>
+    <nav aria-label="Contato"><a href="https://wa.me/5511980158667" target="_blank" rel="noopener">WhatsApp (11) 98015-8667</a><a href="https://www.instagram.com/tatysilvastudio/" target="_blank" rel="noopener">@tatysilvastudio</a><a href="https://waze.com/ul?ll=-23.528183,-46.6356303&navigate=yes" target="_blank" rel="noopener">Ir com Waze</a><span>Ter. a sáb. · com hora marcada</span></nav>
     <div class="cred"><span>© <span id="yr">2026</span> Taty Silva Studio</span><span>Site por <a href="https://www.instagram.com/duh.lab/" target="_blank" rel="noopener">Duh Lab</a></span></div>
   </div>
 </footer>
@@ -507,17 +552,12 @@ $$('img.fade').forEach(i=>{if(i.complete&&i.naturalWidth)i.classList.add('ok');e
 const top=$('#top');addEventListener('scroll',()=>top.classList.toggle('s',scrollY>10),{passive:true});
 
 /* horário (America/Sao_Paulo) */
-const H={0:null,1:null,2:[9,16],3:[9,16],4:[9,16],5:[9,16],6:[9,16]};
-const DN=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
-function sp(){const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());const g=k=>p.find(x=>x.type===k).value;return{d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),h:(+g('hour'))%24+(+g('minute'))/60}}
-function status(){const n=sp(),t=H[n.d];if(t&&n.h>=t[0]&&n.h<t[1])return{open:1,txt:'Aberto agora · até as '+t[1]+'h'};
- for(let k=0;k<8;k++){const d=(n.d+k)%7,u=H[d];if(!u)continue;if(k===0&&n.h<u[0])return{open:0,txt:'Fechado agora · abre hoje às '+u[0]+'h'};if(k>0)return{open:0,txt:'Fechado agora · abre '+(k===1?'amanhã':DN[d].toLowerCase())+' às '+u[0]+'h'}}}
-function paintStatus(){const s=status();[['#live','#liveTxt'],['#live2','#liveTxt2']].forEach(([a,b])=>{$(a).classList.toggle('off',!s.open);$(b).textContent=s.txt});$('#liveTxt2').textContent=(s.open?'Hoje · aberto agora':'Hoje · '+s.txt.replace('Fechado agora · ','fechado, '));
- const today=sp().d,ord=[2,3,4,5,6,0,1];$('#hrs').innerHTML=ord.map(d=>`<tr class="${d===today?'today':''}"><td>${DN[d]}${d===today?'<span class="tg">hoje</span>':''}</td><td class="${H[d]?'':'cl'}">${H[d]?'09:00 – 16:00':'Fechado'}</td></tr>`).join('')}
-paintStatus();setInterval(paintStatus,60000);
+const DN=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],ATD=[2,3,4,5,6];
+function spDay(){return['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short'}).format(new Date()))}
+const today=spDay();$('#hrs').innerHTML=[2,3,4,5,6,0,1].map(d=>{const on=ATD.includes(d);return`<tr class="${d===today?'today':''}"><td>${DN[d]}${d===today?'<span class="tg">hoje</span>':''}</td><td class="${on?'':'cl'}">${on?'Com hora marcada':'Sem atendimento'}</td></tr>`}).join('');
 
 /* trabalhos */
-const W=[['trab-01','Nude jelly','natural e delicada',760,1013],['trab-02','Vermelho','clássico que dura',760,760],['trab-03','Lilás','rosado e suave',760,1013],['trab-04','Poá','divertida e chique',760,1013],['trab-05','Azul marinho','elegância discreta',760,808],['trab-06','Rosé','com Dafu Flowers',760,814],['trab-07','Marsala','profundo e brilhante',760,760],['trab-08','Cinza','curtinha moderna',760,1013],['trab-09','Roxo','vibrante',760,1013],['trab-10','Glitter','mix de cores',760,1013],['trab-11','Lilás pastel','acabamento jelly',760,1013],['trab-12','Branco leitoso','curtinha clean',760,428]];
+const W=[['trab-00','Esmaltação em gel','no processo',720,960],['trab-01','Nude jelly','natural e delicada',760,1013],['trab-13','Branco leitoso','alongamento natural',760,1100],['trab-02','Vermelho','clássico que dura',760,760],['trab-03','Lilás','rosado e suave',760,1013],['trab-04','Poá','divertida e chique',760,1013],['trab-06','Rosé','delicado',760,814],['trab-07','Marsala','profundo e brilhante',760,760],['trab-08','Cinza','curtinha moderna',760,1013],['trab-09','Roxo','vibrante',760,1013],['trab-11','Lilás pastel','acabamento jelly',760,1013],['trab-12','Branco leitoso','com francesinha',760,428]];
 const ct=$('#carTrack');ct.innerHTML=W.map(w=>`<button type="button" class="card"><span class="ci"><img src="img/${w[0]}.webp" width="${w[3]}" height="${w[4]}" alt="Unhas ${w[1].toLowerCase()}, ${w[2]}" draggable="false" decoding="async"></span><span class="cap"><b>${w[1]}</b>${w[2]}</span></button>`).join('');
 const lb=$('#lb');ct.addEventListener('click',e=>{const b=e.target.closest('.card');if(!b||window.__dr)return;const i=b.querySelector('img');$('#lbImg').src=i.src;$('#lbImg').alt=i.alt;try{lb.showModal()}catch(_){}});
 $('#lbClose').addEventListener('click',()=>lb.close());lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
@@ -546,7 +586,7 @@ const CO=[{v:'nude',l:'Nude jelly',sw:'#E9BDB3',c:'#E9BDB3',a:.82,d:'O queridinh
  {v:'rosacha',l:'Rosa chá',sw:'#C99A9C',c:'#C99A9C',a:.92,d:'Rosado discreto, perfeito para o dia a dia e para quem ama delicadeza.'},
  {v:'vermelho',l:'Vermelho',sw:'#B3121F',c:'#B3121F',a:1,d:'Um vermelho desses não é só uma escolha, é um acontecimento.'},
  {v:'lilas',l:'Lilás',sw:'#C7A2DC',c:'#C7A2DC',a:1,d:'Delicado e cheio de personalidade, rouba a cena sem exagero.'},
- {v:'marinho',l:'Azul marinho',sw:'#1F2D4F',c:'#1F2D4F',a:1,d:'Elegância discreta, combina com tudo e fica linda curtinha.'},
+ {v:'leitoso',l:'Branco leitoso',sw:'#F4ECE6',c:'#F6EEE8',a:.92,d:'O branco mais natural que existe: leitoso, delicado e lindo no alongamento.'},
  {v:'terroso',l:'Terroso',sw:'#7A3E2C',c:'#7A3E2C',a:1,d:'Sofisticado e acolhedor, aquele tom que conquista no primeiro olhar.'},
  {v:'francesinha',l:'Francesinha',sw:'linear-gradient(#fff 0 40%,#EBC2B8 40%)',c:'#EBC2B8',a:.85,d:'Clássica atemporal: base nude e pontinha branca bem fininha.'}];
 const FI=[{v:'brilho',l:'Brilho'},{v:'fosco',l:'Fosco'}];
